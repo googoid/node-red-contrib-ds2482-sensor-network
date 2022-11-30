@@ -39,6 +39,15 @@ module.exports = RED => {
 
     const network = instances[n.network];
 
+    node.on('input', () => {
+      network
+        .init()
+        .then(() => network.search())
+        .then(() => network.readTemperatures())
+        .then(onData)
+        .catch(onError);
+    });
+
     node.on('close', () => {
       listenerCount[n.network]--;
 
