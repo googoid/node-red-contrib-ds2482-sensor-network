@@ -1,0 +1,26 @@
+{
+  "name": "red-contrib-ds2482-sensor-network",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "node-red": {
+    "nodes": {
+      "configurator": "configurator.js",
+      "nodes": "nodes.js"
+    }
+  },
+  "keywords": [
+    "node-red",
+    "ds2482-sensor-network"
+  ],
+  "dependencies": {
+    "coffee-script": "^1.12.7",
+    "ds2482-temperature": "^0.3.0",
+    "pcf8574cluster": "github:googoid/PCF8574Cluster"
+  }
+}
