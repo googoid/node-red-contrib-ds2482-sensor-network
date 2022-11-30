@@ -4,18 +4,9 @@
     color: '#80b779',
     defaults: {
       network: { value: '', type: 'ds2482-sensor-network-configurator' },
-      name: { value: '', required: false },
-      pollInterval: {
-        value: 30,
-        required: true,
-        validate: RED.validators.number(),
-        custom: function (v) {
-          v = parseInt(v);
-          return v > 0;
-        }
-      }
+      name: { value: '', required: false }
     },
-    inputs: 0,
+    inputs: 1,
     outputs: 1,
     paletteLabel: 'temperature',
     icon: 'rpi.png',
@@ -45,45 +36,4 @@
 
 <script type="text/x-red" data-help-name="ds2482-network">
   <p>DS2482 Network</p>
-</script>
-
-<script type="text/javascript">
-  RED.nodes.registerType('ds2482-sensor', {
-    category: 'ds2482',
-    color: '#80b779',
-    defaults: {
-      network: { value: '', type: 'ds2482-sensor-network-configurator' },
-      name: { value: '', required: false },
-      rom: { value: '' }
-    },
-    inputs: 1,
-    outputs: 1,
-    paletteLabel: 'sensor',
-    icon: 'rpi.png',
-    align: 'left',
-    label: function () {
-      return this.name || this.rom || 'sensor';
-    },
-    oneditprepare: function () {},
-    oneditsave: function () {}
-  });
-</script>
-
-<script type="text/x-red" data-template-name="ds2482-sensor">
-  <div class="form-row">
-    <label for="node-input-network"><i class="icon-tag"></i> Sensor Network</label>
-    <input type="text" id="node-input-network" placeholder="Sensor Network">
-  </div>
-  <div class="form-row">
-    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
-    <input type="text" id="node-input-name" placeholder="Name">
-  </div>
-  <div class="form-row">
-    <label for="node-input-rom"><i class="icon-tag"></i> Rom</label>
-    <input type="text" id="node-input-rom" placeholder="Rom">
-  </div>
-</script>
-
-<script type="text/x-red" data-help-name="ds2482-sensor">
-  <p>DS2482 Sensor</p>
 </script>
