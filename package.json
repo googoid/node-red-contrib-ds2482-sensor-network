@@ -20,7 +20,6 @@
   ],
   "dependencies": {
     "coffee-script": "^1.12.7",
-    "ds2482-temperature": "^0.3.0",
-    "pcf8574cluster": "github:googoid/PCF8574Cluster"
+    "ds2482-temperature": "^0.3.0"
   }
 }
